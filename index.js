@@ -1,4 +1,4 @@
-let array = [
+let pacientes = [
   {
     paciente: {
       nombre: "Manuel",
@@ -55,14 +55,29 @@ let array = [
   },
 ];
 // filter, map y reduce, push
-let arraycito = [
-  {
-    paciente: {
-      nombre: "Isabel",
-      edad: 63,
-      sexo: "M",
-    },
-    diasIngresado: 6,
-    dieta: "Sin sal",
-  },
-];
+
+function enunciado(){
+  return PacientesReport;
+}
+
+function filtrado(pacientes){
+  return (pacientes.paciente.edad > 17);
+}
+
+function diabetes(pacientes){
+  return (pacientes.paciente.sexo === "M" && pacientes.dieta === "Diabetes");
+}
+
+function ingreso(pacientes){
+  return (pacientes.diasIngresado)
+}
+
+class PacientesReport {
+  constructor(pacientes) {
+    this.pacientes = pacientes.length;
+    this.mayoresEdad = pacientes.filter(filtrado);
+    this.hombresDiabeticos = pacientes.filter(diabetes);
+    this.totalDiasIngreso = pacientes.filter(ingreso);
+    this.mediaEdadMujeres=;
+  }
+}
